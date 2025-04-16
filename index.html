@@ -2,51 +2,102 @@
 <html lang="zh-Hant">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>蔡忠叡 Zhong-Rui Tsai | 個人網站</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body {
-      font-family: "Helvetica Neue", sans-serif;
-      max-width: 800px;
-      margin: 40px auto;
-      line-height: 1.8;
+      font-family: 'Noto Sans TC', sans-serif;
+      background-color: #f7f9fc;
       color: #333;
-      padding: 0 20px;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 30px;
+      background-color: #fff;
+      border-radius: 16px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+    .avatar {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #e0ecff;
+      margin-bottom: 20px;
     }
     h1 {
-      color: #0055a5;
+      color: #004b8d;
+      margin-bottom: 5px;
     }
-    a {
-      color: #0077cc;
-      text-decoration: none;
+    h2 {
+      margin-top: 40px;
+      color: #2c3e50;
+      text-align: left;
     }
-    a:hover {
-      text-decoration: underline;
+    p, li {
+      line-height: 1.8;
+      text-align: left;
+    }
+    ul {
+      padding-left: 20px;
+    }
+    .badge {
+      display: inline-block;
+      background-color: #e0ecff;
+      color: #004b8d;
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-size: 0.85em;
+      margin-right: 8px;
+    }
+    .experience-card {
+      background: #f2f6fc;
+      border-left: 4px solid #4a90e2;
+      padding: 12px 16px;
+      border-radius: 10px;
+      margin-top: 12px;
+    }
+    footer {
+      text-align: center;
+      margin-top: 50px;
+      font-size: 0.9em;
+      color: #888;
     }
   </style>
 </head>
 <body>
-  <h1>蔡忠叡 Zhong-Rui Tsai</h1>
-  <p>🎓 國立臺北大學 資訊管理研究所碩士班一年級</p>
-  <p>🔍 研究主題：基於 UTXO 模型之加密貨幣交易手續費最小化策略</p>
-  <p>📚 興趣領域：區塊鏈技術、金融科技、資料分析</p>
-  
-  <h2>關於我</h2>
-  <p>
-    我熱衷於探討加密貨幣網路中交易效率與成本的平衡，目前致力於研究如何結合資料分析與演算法策略，來降低加密貨幣交易過程中的手續費。除學術研究外，也對金融產品設計、數據驅動決策、與用戶體驗優化有實務經驗。
-  </p>
+  <div class="container">
+    <img src="me.jpg" alt="Zhong-Rui Tsai" class="avatar">
+    <h1>蔡忠叡 Zhong-Rui Tsai</h1>
+    <p>🎓 國立臺北大學 資訊管理研究所碩士班一年級</p>
+    <p>
+      <span class="badge">區塊鏈技術</span>
+      <span class="badge">金融科技</span>
+      <span class="badge">資料分析</span>
+    </p>
 
-  <h2>經歷與背景</h2>
-  <ul>
-    <li>📌 KKday｜software engineer</li>
-  </ul>
+    <h2>研究主題</h2>
+    <p>🔍 基於 UTXO 模型之加密貨幣交易手續費最小化策略。</p>
 
-  <h2>聯絡我</h2>
-  <p>Email：<a href="mailto:your.email@example.com">your.email@example.com</a></p>
-  <p>LinkedIn：<a href="https://www.linkedin.com/in/your-profile" target="_blank">your-profile</a></p>
-  <p>GitHub：<a href="https://github.com/jerrytsai0805" target="_blank">jerrytsai0805</a></p>
+    <h2>關於我</h2>
+    <p>
+      我熱衷於探討加密貨幣網路中交易效率與成本的平衡，致力於研究如何結合資料分析與演算法策略，來降低加密貨幣交易過程中的手續費。
+      除了學術研究，我也對金融產品設計、數據驅動決策與用戶體驗優化有實務經驗。
+    </p>
 
-  <footer>
-    <p style="margin-top: 2em; font-size: 0.9em; color: #888;">© 2025 蔡忠叡 Zhong-Rui Tsai</p>
-  </footer>
+    <h2>經歷與背景</h2>
+    <div class="experience-card">
+      📌 KKday｜Software Engineer
+    </div>
+
+    <footer>
+      <p>© 2025 蔡忠叡 Zhong-Rui Tsai</p>
+    </footer>
+  </div>
 </body>
 </html>
