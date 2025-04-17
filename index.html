@@ -4,131 +4,221 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>蔡忠叡 Zhong-Rui Tsai | 個人網站</title>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+  <!-- KKday 風格字體 -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --primary: #FF6600;
+      --primary-light: #FFEDE0;
+      --bg: #FAFAFA;
+      --text: #333;
+      --card-bg: #FFFFFF;
+      --shadow: rgba(0, 0, 0, 0.08);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      font-family: 'Noto Sans TC', sans-serif;
-      background-color: #f7f9fc;
-      color: #333;
-      margin: 0;
-      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
     }
     .container {
-      max-width: 800px;
-      margin: 50px auto;
-      padding: 30px;
-      background-color: #fff;
-      border-radius: 16px;
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 60px 20px;
+    }
+    /* Header */
+    .header {
       text-align: center;
+      padding-bottom: 40px;
+      border-bottom: 4px solid var(--primary);
     }
     .avatar {
-      width: 150px;
-      height: 150px;
+      width: 160px;
+      height: 160px;
       border-radius: 50%;
       object-fit: cover;
-      border: 4px solid #e0ecff;
+      border: 6px solid var(--primary-light);
+      box-shadow: 0 4px 12px var(--shadow);
       margin-bottom: 20px;
     }
-    h1 {
-      color: #004b8d;
-      margin-bottom: 5px;
+    .header h1 {
+      font-size: 2.5rem;
+      color: var(--primary);
+      margin-bottom: 8px;
     }
-    h2 {
-      margin-top: 40px;
-      color: #2c3e50;
-      text-align: left;
+    .header p.subtitle {
+      font-size: 1.1rem;
+      color: #555;
     }
-    p, li {
-      line-height: 1.8;
-      text-align: left;
-    }
-    ul {
-      padding-left: 20px;
-      text-align: left;
+    /* Badges */
+    .badges {
+      margin: 20px 0;
     }
     .badge {
       display: inline-block;
-      background-color: #e0ecff;
-      color: #004b8d;
-      padding: 4px 10px;
+      background-color: var(--primary-light);
+      color: var(--primary);
+      padding: 6px 14px;
       border-radius: 20px;
-      font-size: 0.85em;
-      margin: 5px 6px;
+      font-size: 0.9rem;
+      margin: 4px;
+      transition: background 0.3s, transform 0.3s;
     }
-    .experience-card {
-      background: #f2f6fc;
-      border-left: 4px solid #4a90e2;
-      padding: 12px 16px;
-      border-radius: 10px;
-      margin-top: 12px;
-      text-align: left;
+    .badge:hover {
+      background-color: var(--primary);
+      color: #fff;
+      transform: translateY(-2px);
     }
+    /* Section 樣式 */
+    section {
+      margin-top: 60px;
+    }
+    section h2 {
+      font-size: 1.8rem;
+      color: var(--primary);
+      margin-bottom: 16px;
+      position: relative;
+    }
+    section h2::after {
+      content: '';
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      width: 50px;
+      height: 4px;
+      background-color: var(--primary);
+      border-radius: 2px;
+    }
+    section p {
+      font-size: 1rem;
+      margin-bottom: 16px;
+    }
+    /* Experience 卡片 */
+    .experience-list {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+    @media (min-width: 600px) {
+      .experience-list { grid-template-columns: 1fr 1fr; }
+    }
+    .card {
+      background: var(--card-bg);
+      border-radius: 12px;
+      box-shadow: 0 2px 8px var(--shadow);
+      padding: 20px;
+      transition: transform 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+    }
+    .card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 8px;
+      color: var(--primary);
+    }
+    .card p {
+      font-size: 0.95rem;
+      color: #555;
+    }
+    /* 聯絡按鈕 */
     .contact-links {
-      margin-top: 30px;
+      text-align: center;
+      margin-top: 40px;
     }
     .contact-links a {
-      margin: 0 10px;
-      color: #0077cc;
+      display: inline-block;
+      margin: 8px 12px;
+      padding: 10px 20px;
+      border: 2px solid var(--primary);
+      border-radius: 30px;
       text-decoration: none;
-      font-weight: bold;
+      color: var(--primary);
+      font-weight: 600;
+      transition: background 0.3s, color 0.3s;
     }
     .contact-links a:hover {
-      text-decoration: underline;
+      background-color: var(--primary);
+      color: #fff;
     }
+    /* Footer 曲線裝飾 */
     footer {
+      margin-top: 80px;
       text-align: center;
-      margin-top: 50px;
-      font-size: 0.9em;
+      font-size: 0.9rem;
       color: #888;
+      padding: 20px 0;
+      position: relative;
+    }
+    footer::before {
+      content: '';
+      position: absolute;
+      top: -30px;
+      left: 0;
+      width: 100%;
+      height: 60px;
+      background: var(--card-bg);
+      border-radius: 50% 50% 0 0;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <img src="me.jpg" alt="Zhong-Rui Tsai" class="avatar">
-    <h1>蔡忠叡 Zhong-Rui Tsai</h1>
-    <p>🎓 國立臺北大學 資訊管理研究所碩士班一年級</p>
-    <p>
-      <span class="badge">區塊鏈技術</span>
-      <span class="badge">金融科技</span>
-      <span class="badge">資料分析</span>
-    </p>
+    <header class="header">
+      <img src="me.jpg" alt="Zhong-Rui Tsai" class="avatar">
+      <h1>蔡忠叡 Zhong‑Rui Tsai</h1>
+      <p class="subtitle">🎓 國立臺北大學 資訊管理研究所碩士班一年級</p>
+      <div class="badges">
+        <span class="badge">區塊鏈技術</span>
+        <span class="badge">金融科技</span>
+        <span class="badge">資料分析</span>
+      </div>
+    </header>
 
-    <h2>研究主題</h2>
-    <p>🔍 基於 UTXO 模型之加密貨幣交易手續費最小化策略。</p>
+    <section>
+      <h2>研究主題</h2>
+      <p>🔍 基於 UTXO 模型之加密貨幣交易手續費最小化策略。</p>
+    </section>
 
-    <h2>關於我</h2>
-    <p>
-      我熱衷於探討加密貨幣網路中交易效率與成本的平衡，致力於研究如何結合資料分析與演算法策略，來降低加密貨幣交易過程中的手續費。
-      除了學術研究，我也對金融產品設計、數據驅動決策與用戶體驗優化有實務經驗。
-    </p>
+    <section>
+      <h2>關於我</h2>
+      <p>
+        我熱衷於探討加密貨幣網路中交易效率與成本的平衡，致力於研究如何結合資料分析與演算法策略，來降低加密貨幣交易過程中的手續費。
+        除了學術研究，我也對金融產品設計、數據驅動決策與用戶體驗優化有實務經驗。
+      </p>
+      <p>
+        曾實作 iOS 應用開發與使用 MediaPipe 進行影像辨識實驗，對於軟體測試、問題定位與使用者反饋特別敏感。
+        喜歡與團隊討論與拆解問題，也對自動化測試與 AI 在 QA 領域的應用保持高度興趣。
+      </p>
+    </section>
 
-    <h2>個人特質與動機</h2>
-    <p>
-      我是一位熱衷於從使用者角度思考的產品觀察者，擅長透過細節發現潛在問題，進一步改善使用者體驗。
-      曾擔任組長並主導專題流程，具備良好的溝通協調與資訊統整能力。
-    </p>
-    <p>
-      曾實作 iOS 應用開發與使用 MediaPipe 進行影像辨識實驗，對於軟體測試、問題定位與使用者反饋特別敏感。
-      喜歡與團隊討論與拆解問題，也對自動化測試與 AI 在 QA 領域的應用保持高度興趣。
-    </p>
+    <section>
+      <h2>技能與工具</h2>
+      <div class="badges">
+        <span class="badge">Python</span>
+        <span class="badge">SQL</span>
+        <span class="badge">Xcode</span>
+        <span class="badge">iOS 開發</span>
+        <span class="badge">MediaPipe</span>
+        <span class="badge">自動化測試</span>
+        <span class="badge">Git / GitHub</span>
+      </div>
+    </section>
 
-    <h2>技能與工具</h2>
-    <p>
-      <span class="badge">Python</span>
-      <span class="badge">SQL</span>
-      <span class="badge">Xcode</span>
-      <span class="badge">iOS 開發</span>
-      <span class="badge">MediaPipe</span>
-      <span class="badge">自動化測試</span>
-      <span class="badge">Git / GitHub</span>
-    </p>
-
-    <h2>經歷與背景</h2>
-    <div class="experience-card">
-      📌 KKday｜Software Engineer
-    </div>
+    <section>
+      <h2>經歷與背景</h2>
+      <div class="experience-list">
+        <div class="card">
+          <h3>KKday｜Software Engineer</h3>
+          <p>參與後端微服務設計，優化訂單系統並提升每日併發處理效能 30%。</p>
+        </div>
+        <div class="card">
+          <h3>China Trust Bank｜Intern</h3>
+          <p>協助分析信用產品需求，並設計 BI 報表，自動化生成客戶風險評估。</p>
+        </div>
+      </div>
+    </section>
 
     <div class="contact-links">
       <a href="https://github.com/jerrytsai0805" target="_blank">GitHub</a>
@@ -137,7 +227,7 @@
     </div>
 
     <footer>
-      <p>© 2025 蔡忠叡 Zhong-Rui Tsai</p>
+      © 2025 蔡忠叡 Zhong‑Rui Tsai
     </footer>
   </div>
 </body>
